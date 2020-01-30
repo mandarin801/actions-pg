@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
-      uses: JimCronqvist/action-ssh@master@0.1.1
+      uses: JimCronqvist/action-ssh@0.1.1
       env:
         NAME: "GITHUB"
       with:
