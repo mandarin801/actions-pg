@@ -12,9 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
-      uses: JimCronqvist/action-ssh@master
+      uses: JimCronqvist/action-ssh@master@0.1.1
+      env:
+        NAME: "GITHUB"
       with:
         hosts: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         privateKey: ${{ secrets.KEY }}
-        command: whoami
+        command: |
+          ls -lah
+          echo "I am $NAME"
+          
