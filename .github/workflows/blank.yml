@@ -11,15 +11,23 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: JimCronqvist/action-ssh@0.1.1
-      env:
-        NAME: "GITHUB"
-      with:
-        hosts: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        privateKey: ${{ secrets.KEY }}
-        command: |
-          ls -lah
-          echo "I am $NAME"
+    - name: Clone repo in container
+      uses: actions/checkout@v1
+
+    - name: execute ssh task
+      run: |
+        ssh -i ${{ secret.KEY }} $ {{ secrets.USERNAME }}@ ${{ secrets.HOST }} 'ls -lah'
+
+    # steps:
+    # - name: executing remote ssh commands using password
+    #   uses: JimCronqvist/action-ssh@0.1.1
+    #   env:
+    #     NAME: "GITHUB"
+    #   with:
+    #     hosts: ${{ secrets.HOST }}
+    #     username: ${{ secrets.USERNAME }}
+    #     privateKey: ${{ secrets.KEY }}
+    #     command: |
+    #       ls -lah
+    #       echo "I am $NAME"
           
