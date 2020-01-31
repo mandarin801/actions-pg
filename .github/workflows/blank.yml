@@ -13,11 +13,20 @@ jobs:
     steps:
     - name: Clone repo in container
       uses: actions/checkout@v1
+      
+    - name: save envs
+      uses: appleboy/ssh-action@v0.0.2
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          ls -lah
 
-    - name: execute ssh task
-      run: |
-        echo ${{ secrets.KEY }} >> id_rsa
-        ssh -i id_rsa ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'ls -lah'
+#     - name: execute ssh task
+#       run: |
+#         echo ${{ secrets.KEY }} >> id_rsa
+#         ssh -i id_rsa ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'ls -lah'
 
     # steps:
     # - name: executing remote ssh commands using password
