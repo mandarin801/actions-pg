@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v1
       
     - name: save envs
-      uses: appleboy/ssh-action@v0.0.2
+      uses: appleboy/ssh-action@v0.0.7
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
