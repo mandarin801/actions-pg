@@ -17,7 +17,7 @@ jobs:
     - name: execute ssh task
       run: |
         echo ${{ secrets.KEY }} >> id_rsa
-        ssh -i id_rsa $ {{ secrets.USERNAME }}@${{ secrets.HOST }} 'ls -lah'
+        ssh -i id_rsa ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'ls -lah'
 
     # steps:
     # - name: executing remote ssh commands using password
