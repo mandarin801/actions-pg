@@ -16,7 +16,7 @@ jobs:
 
     - name: execute ssh task
       run: |
-        ssh -i ${{ secrets.KEY }} $ {{ secrets.USERNAME }}@ ${{ secrets.HOST }} 'ls -lah'
+        ssh -i ${{ secrets.KEY }} $ {{ secrets.USERNAME }}@${{ secrets.HOST }} 'ls -lah'
 
     # steps:
     # - name: executing remote ssh commands using password
