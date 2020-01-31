@@ -13,10 +13,10 @@ jobs:
     steps:
     - name: Clone repo in container
       uses: actions/checkout@v1
-      run: ${{ secrets.KEY }} >> id_rsa
 
     - name: execute ssh task
       run: |
+        ${{ secrets.KEY }} >> id_rsa
         ssh -i id_rsa $ {{ secrets.USERNAME }}@${{ secrets.HOST }} 'ls -lah'
 
     # steps:
