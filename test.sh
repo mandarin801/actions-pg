@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello from remote server"
+echo "Hello from remote server v1"
