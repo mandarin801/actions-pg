@@ -23,6 +23,10 @@ jobs:
       with:
         args: |
           ls -lah
+          git clone https://github.com/mandarin801/actions-pg.git
+          cd actions-pg
+          chmod +x test.sh
+          ./test.sh
 
 #     - name: execute ssh task
 #       run: |
