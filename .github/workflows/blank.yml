@@ -23,10 +23,10 @@ jobs:
         REPO: "https://github.com/mandarin801/actions-pg.git"
       with:
         args: |
-          [ -d ./actions-pg ] || git clone https://github.com/mandarin801/actions-pg.git \
-          cd actions-pg \
-          git pull https://github.com/mandarin801/actions-pg.git \
-          chmod +x test.sh \
+          [ -d ./actions-pg ] || git clone https://github.com/mandarin801/actions-pg.git
+          cd actions-pg
+          git pull https://github.com/mandarin801/actions-pg.git
+          chmod +x test.sh
           ./test.sh
 
 #     - name: execute ssh task
