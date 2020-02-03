@@ -1,4 +1,4 @@
-name: CI
+hname: CI
 
 on: 
   push:
@@ -25,7 +25,7 @@ jobs:
         args: |
           [ -d ./actions-pg ] || git clone https://github.com/mandarin801/actions-pg.git
           cd actions-pg
-          git pull https://github.com/mandarin801/actions-pg.git
+          git fetch https://github.com/mandarin801/actions-pg.git
           chmod +x test.sh
           ./test.sh
 
