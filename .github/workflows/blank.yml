@@ -22,8 +22,7 @@ jobs:
         USER: ${{ secrets.USER }}
       with:
         args: |
-          ls -lah
-          git clone https://github.com/mandarin801/actions-pg.git
+          if [ -d ./actions-pg ] then; git pull https://github.com/mandarin801/actions-pg.git; else git clone https://github.com/mandarin801/actions-pg.git
           cd actions-pg
           chmod +x test.sh
           ./test.sh
