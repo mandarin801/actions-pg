@@ -20,13 +20,10 @@ jobs:
         PRIVATE_KEY: ${{ secrets.KEY }}
         HOST: ${{ secrets.HOST }}
         USER: ${{ secrets.USER }}
+        REPO: "https://github.com/mandarin801/actions-pg.git"
       with:
         args: |
-          if [ -d ./actions-pg ] then; 
-            git pull https://github.com/mandarin801/actions-pg.git
-          else 
-            git clone https://github.com/mandarin801/actions-pg.git
-          fi
+          [ -d ./actions-pg ] && git pull $REPO || git clone $REPO
           cd actions-pg
           chmod +x test.sh
           ./test.sh
