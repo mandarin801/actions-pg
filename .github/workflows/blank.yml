@@ -25,7 +25,7 @@ jobs:
         args: |
           [ -d ./actions-pg ] || git clone https://github.com/mandarin801/actions-pg.git
           cd actions-pg
-          git fetch https://github.com/mandarin801/actions-pg.git
+          git reset --hard && git pull
           chmod +x test.sh
           ./test.sh
 
