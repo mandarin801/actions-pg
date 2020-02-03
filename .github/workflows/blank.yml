@@ -23,7 +23,7 @@ jobs:
         REPO: "https://github.com/mandarin801/actions-pg.git"
       with:
         args: |
-          [ -d ./actions-pg ] && git pull ${{ env.REPO }} || git clone ${{ env.REPO }}
+          [ -d ./actions-pg ] && git pull https://github.com/mandarin801/actions-pg.git || git clone https://github.com/mandarin801/actions-pg.git
           cd actions-pg
           chmod +x test.sh
           ./test.sh
